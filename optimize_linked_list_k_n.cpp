@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     k = stoi(argv[1]);
     n = stoi(argv[2]);
     string kk(argv[1]), nn(argv[2]);
-    f.open("optmized_linked_list\\"+kk + "_" + nn+"_initial",std::ios_base::app);
+    f.open("optmized_linked_list\\"+kk + "_" + nn+"_sum",std::ios_base::app);
 
     list<node> lis;
     vector<node> store(n);
@@ -46,8 +46,10 @@ int main(int argc, char *argv[])
     }
     clock_t begin = clock();
 	long long sum = 0;
-    for (auto it = head; it != nullptr;it = it->next)
+    for (auto it = head; it != nullptr;it = it->next){
         sum += it->num;
+    }
+
 	cout<<sum<<"\n";
     f << (double(clock())-double(begin)) / CLOCKS_PER_SEC<<endl;
 
